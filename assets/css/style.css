@@ -1,0 +1,19 @@
+header {
+    margin-bottom: 230px;
+    margin-top: 20px;
+}
+
+
+
+#questions {
+    display: none;
+}
+
+#gameover {
+    display: none;
+}
+
+#highScoreContainer {
+    display: none;
+}
+
