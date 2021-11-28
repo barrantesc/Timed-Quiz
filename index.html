@@ -23,39 +23,39 @@
 
     <main class="col-sm-6 mx-auto">
         <div class="container">
-            <div class="row">
-                <div id="start">
+            <div id="start" class="row">
+                <div>
                     <h3> Coding Quiz Challenge</h3>
                     <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answer will penalize your score/time by ten seconds!</p>
-                    <button class="btn btn-primary">Start Quiz</button>
+                    <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
                 </div>
             </div>
 
             <!--Questions Section-->
-            <div id="questions">
-                <div id="answer-buttons">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
+            <div id="question-section">
+                <p id="question">Question place holder</p>
+                <div>
+                    <button id="btn1" onclick="checkAnswer('a')">A</button>
+                    <button id="btn2" onclick="checkAnswer ('b')">B</button>
+                    <button id="btn3" onclick="checkAnswer ('c')">C</button>
+                    <button id="btn4" onclick="checkAnswer ('d')">D</button>
                 </div>
             </div>
 
-            <div id="gameover">
+            <div id="gameOver">
                 <p>Your final score is 
                     <span id="final-score">23</span>
                 </p>
                 <input type="text" name="" id="initials" size="50" placeholder="Enter your initials to record your score">
-                <button id="submit">Submit</button>
+                <button id="submit" onclick="submitScore()">Submit</button>
             </div>
 
             <div id="highScoreContainer">
                 <div id="highScore">
                     <div id="highscorepage">
                         <div id="highScoreHeader">
-                            <h3>Players Initials</h3>
-                            <h3>Scores</h3>
-                            <p> <span id="highscore-initials"></span> - <span id="highscores">/</span> </p>
+                            <h2>High Scores</h2>
+                            <ol id="highScoreList"></ol>
                         </div>
                     </div>
                 <div id="End-Btns">
