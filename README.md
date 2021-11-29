@@ -8,14 +8,10 @@ A times quiz application with multiple choice questions on Javascript fundamenta
 *CSS
 *Javascript
 
-##
-
-
-
-![Mockup of final product]() 
+![Mockup of final product](https://github.com/barrantesc/Timed-Quiz/blob/main/FinalProduct.png) 
 
 ## Website
-
+https://barrantesc.github.io/Timed-Quiz/
 
 ## Contribution
 Made with ❤️ by Connie Barrantes
