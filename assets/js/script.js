@@ -11,16 +11,17 @@ var final= document.getElementById("final-score");
 var playerInitials = document.getElementById("initials");
 var highScoreContainer = document.getElementById("highScoreContainer");
 var highScoreList = document.getElementById("highScoreList");
-
+var timerEl = document.getElementById("timer");
 
 
 
 var finalQuestionIndex = questions.length;
 var currentQuestionIndex = 0;
-var timeLeft = 50;
+// var timeLeft = 50;
 var score = 0;
 var initials;
-// var timerInterval;
+var timer;
+var counter = 50;
 
 
 // Start Quiz Button Function
@@ -29,6 +30,18 @@ function startQuiz(){
     startDiv.style.display = "none";
     questionSectionDiv.style.display = "block"
     populateQuestions();
+    timerSection();
+}
+
+function timerSection(){
+    timer = setInterval(function(){
+        timerEl.textContent = counter;
+        counter --;
+        if (counter <= 0) {
+            showGameOver()
+        }
+
+    },1000)
 }
 
 // Populating questions along with answers
@@ -63,6 +76,7 @@ function checkAnswer(answer) {
 
     }else if (answer !== correctAnswer & currentQuestionIndex !== finalQuestionIndex) {
         // console.log("incorrecAnswer")
+        counter = counter - 10;
         currentQuestionIndex++;
         populateQuestions();
 
@@ -74,6 +88,10 @@ function checkAnswer(answer) {
 }
 
 function showGameOver() {
+    clearInterval(timer);
+    if (counter <= 0){
+        timerEl.innerHTML = 0;
+    }
     endOfGame.style.display = "block";
     questionSectionDiv.style.display = "none";
     finalScore();
@@ -101,8 +119,15 @@ function showHighScores() {
 }
 
 
-// function clearScore (){
-//     window.localStorage.clear();
-//    highscoreDisplayName.textContent = "";
-//    highscoreDisplayScore.textContent = ""; 
-// }
+function replayQuiz() {
+    endOfGame.style.display = "none"
+    highScoreContainer.style.display = "none"
+    counter = 50;
+    currentQuestionIndex = 0;
+    startQuiz();
+}
+
+function clearScores(){
+    window.localStorage.clear();
+    highScoreList.textContent = ""; 
+}
