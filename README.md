@@ -8,7 +8,7 @@ A times quiz application with multiple choice questions on Javascript fundamenta
 *CSS
 *Javascript
 
-## Minimun Requirements
+##
 
 
 
